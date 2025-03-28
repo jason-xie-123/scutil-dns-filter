@@ -1,3 +1,3 @@
-## Changelog for v0.1.2
+## Changelog for v0.1.0
 
-- Support syntax validation
+- init
