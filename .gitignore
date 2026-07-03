@@ -3,4 +3,4 @@
 __debug_bin**
 release/**
 
-scutil-dns-filter
+/scutil-dns-filter
