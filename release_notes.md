@@ -1,5 +1,5 @@
-## Changelog for v0.2.1
+## Changelog for v0.2.2
 
-Bug-fix release, no CLI behavior changes.
+Housekeeping release, no CLI behavior changes.
 
-- **Fixed `go install` not working**: `go.mod` declared its module path as the bare name `scutil-dns-filter`, which conflicted with the `go install github.com/jason-xie-123/scutil-dns-filter/cmd/scutil-dns-filter@latest` command documented in the README. The module path is now `github.com/jason-xie-123/scutil-dns-filter`, matching the actual import path.
+- Added unit test coverage for two edge cases in `filterDNSIPs`: an empty `Resolvers` slice, and a matching resolver with nil/empty `Nameservers`. Both were already handled correctly by the existing implementation; this just locks that behavior in.
