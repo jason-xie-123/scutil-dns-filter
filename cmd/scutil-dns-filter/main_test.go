@@ -47,6 +47,30 @@ func TestFilterDNSIPsNoMatchingInterface(t *testing.T) {
 	}
 }
 
+func TestFilterDNSIPsEmptyResolvers(t *testing.T) {
+	config := scutil.Config{
+		Resolvers: []scutil.Resolver{},
+	}
+
+	got := filterDNSIPs(config, "en0")
+	if len(got) != 0 {
+		t.Fatalf("filterDNSIPs() = %v, want empty", got)
+	}
+}
+
+func TestFilterDNSIPsMatchingInterfaceNoNameservers(t *testing.T) {
+	config := scutil.Config{
+		Resolvers: []scutil.Resolver{
+			{InterfaceName: "en0", Nameservers: nil},
+		},
+	}
+
+	got := filterDNSIPs(config, "en0")
+	if len(got) != 0 {
+		t.Fatalf("filterDNSIPs() = %v, want empty", got)
+	}
+}
+
 func TestFilterDNSIPsDedupesAcrossResolvers(t *testing.T) {
 	config := scutil.Config{
 		Resolvers: []scutil.Resolver{
