@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	packageVersion "github.com/jason-xie-123/scutil-dns-filter/internal/version"
 	"os"
-	packageVersion "scutil-dns-filter/internal/version"
 
 	"github.com/johnstarich/go/dns/scutil"
 	"github.com/samber/lo"

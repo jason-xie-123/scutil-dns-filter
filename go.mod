@@ -1,4 +1,4 @@
-module scutil-dns-filter
+module github.com/jason-xie-123/scutil-dns-filter
 
 go 1.20
 
